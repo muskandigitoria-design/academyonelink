@@ -222,16 +222,23 @@ body::after{
   </a>
 </div>
 
+<div id="countdown">5</div>
+
 <script>
-let countdown = 5;
-const timer = setInterval(() => {
-  document.getElementById("countdown").innerText = countdown;
-  countdown--;
-  if(countdown < 0){
-    clearInterval(timer);
-  }
-}, 1000);
+  let countdown = 5;
+  const redirectUrl = "https://t.me/+JwHH3aTpmWxlOTRl";
+
+  const timer = setInterval(() => {
+    document.getElementById("countdown").innerText = countdown;
+    countdown--;
+
+    if (countdown < 0) {
+      clearInterval(timer);
+      window.location.href = redirectUrl; // redirect here
+    }
+  }, 1000);
 </script>
+
 
 </body>
 </html>
