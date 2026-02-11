@@ -24,7 +24,6 @@ body{
     color:#fff;
 }
 
-/* MAIN CARD CONTAINER */
 .container{
     max-width:420px;
     width:100%;
@@ -32,13 +31,10 @@ body{
     border-radius:26px;
     padding:30px 22px;
     box-shadow:0 25px 60px rgba(0,0,0,0.9);
-    border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* PROFILE SECTION */
-.profile{
-    text-align:center;
-}
+/* PROFILE */
+.profile{ text-align:center; }
 .profile img{
     width:120px;
     height:120px;
@@ -57,62 +53,18 @@ body{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
-.crowns{
-    display:flex;
-    justify-content:space-between;
-    padding:0 42px;
-    margin-top:-12px;
-}
-.crowns span{
-    font-size:22px;
-    color:#f5c400;
-}
-.trust{
-    margin-top:8px;
-    font-size:14px;
-    color:#d9d9d9;
-}
-.trust span{
-    color:#2ecc71;
-    font-weight:700;
-}
 
-/* COUNTER & BADGES */
-.counter{
-    margin:16px 0;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.1);
-    padding:12px;
-    border-radius:14px;
-    text-align:center;
-}
-.counter b{
-    color:#2ecc71;
-    font-size:20px;
-}
-.badges{
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    margin:18px 0;
-}
-.badge{
-    background:rgba(255,255,255,0.06);
-    padding:9px 16px;
-    border-radius:14px;
-    font-size:13px;
-}
-
-/* --- THE REQUESTED WRAPPER ON BUTTON --- */
+/* --- THE FIX: WRAPPER BOX --- */
 .wrapper {
     margin: 26px 0;
-    padding: 3px; /* Border thickness */
-    border-radius: 35px; /* Matches button roundness */
+    padding: 3px; /* This is your gold border thickness */
+    border-radius: 36px;
     background: linear-gradient(120deg,#f5c400,#fff1a8,#f5c400);
     background-size: 300% 300%;
     animation: borderMove 4s linear infinite;
+    display: flex; /* Ensures the button inside fills the space */
     position: relative;
-    display: block;
+    z-index: 1; /* Keeps it above the background */
 }
 
 @keyframes borderMove{
@@ -121,61 +73,56 @@ body{
 }
 
 .telegram-btn-link {
-    display: block;
+    width: 100%; /* Makes button fill the gold wrapper */
     background: linear-gradient(90deg,#007bff,#00c6ff);
     padding: 17px;
     text-align: center;
-    border-radius: 32px;
+    border-radius: 33px;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
     position: relative;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: heartbeat 2.2s infinite;
 }
 
 @keyframes heartbeat{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.02);}
-    100%{transform:scale(1);}
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
 
-/* PLUS ICON INSIDE BUTTON */
 .plus{
     position:absolute;
     right:14px;
-    top:50%;
-    transform:translateY(-50%);
     width:36px;
     height:36px;
     border-radius:50%;
     background:#00c6ff;
     color:#fff;
-    font-size:22px;
-    font-weight:700;
     display:flex;
     align-items:center;
     justify-content:center;
     box-shadow:0 0 15px rgba(0,198,255,0.9);
 }
-.plus::after{
-    content:"";
-    position:absolute;
-    inset:-6px;
-    border-radius:50%;
-    border:2px solid rgba(0,198,255,0.7);
-    animation:pulse 1.6s infinite;
-}
-@keyframes pulse{
-    0%{transform:scale(0.7);opacity:1;}
-    100%{transform:scale(1.4);opacity:0;}
-}
 
-/* FEATURES */
-.features{
-    margin-top:20px;
+/* OTHER ELEMENTS */
+.counter{
+    margin:16px 0;
+    background:rgba(255,255,255,0.06);
+    padding:12px;
+    border-radius:14px;
+    text-align:center;
 }
+.counter b { color: #2ecc71; font-size: 20px; }
+
+.badges{ display:flex; gap:12px; justify-content:center; margin:18px 0; }
+.badge{ background:rgba(255,255,255,0.06); padding:9px 16px; border-radius:14px; font-size:13px; }
+
+.features { margin-top:20px; }
 .feature{
     background:rgba(255,255,255,0.05);
     padding:15px;
@@ -184,55 +131,28 @@ body{
     align-items:center;
     gap:12px;
     margin-bottom:14px;
-    border:1px solid rgba(255,255,255,0.08);
 }
-.feature span{
-    color:#2ecc71;
-    font-size:19px;
-}
+.feature span { color:#2ecc71; }
 
 .footer{
     text-align:center;
     margin-top:18px;
-    font-size:15px;
     font-weight:600;
     background:linear-gradient(90deg,#00f2fe,#4facfe);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-/* CREDIT */
-.credit{
-    position:fixed;
-    bottom:10px;
-    left:0;
-    width:100%;
-    text-align:center;
-    font-size:13px;
-    font-weight:700;
-    color:#ffd88a;
-    z-index:9999;
-}
-.credit a{
-    color:#cfa44a;
-    text-decoration:none;
-}
+.credit{ position:fixed; bottom:10px; width:100%; text-align:center; font-size:13px; color:#ffd88a; }
+.credit a { color:#cfa44a; text-decoration:none; }
 </style>
 </head>
 <body>
 
 <div class="container">
-
     <div class="profile">
         <img src="https://fantasticczone.site/wp-content/uploads/2026/02/suunill.jpg" alt="Logo">
-
-        <div class="crowns">
-            <span>👑</span>
-            <span>👑</span>
-        </div>
-
         <div class="name">TRADE WITH SUNIL (ORIGINAL)™</div>
-        <div class="trust"><span>✔</span> Trusted learning community</div>
     </div>
 
     <div class="counter">
@@ -257,27 +177,20 @@ body{
         <div class="feature"><span>✔</span> Practical Strategies</div>
     </div>
 
-    <div class="footer">
-        ⚡ Stay Ahead with Smart Learning
-    </div>
-
+    <div class="footer">⚡ Stay Ahead with Smart Learning</div>
 </div>
 
-<div class="credit">
-  ads managed by 
-  <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank">@Nexgroww_agency</a>
-</div>
+<div class="credit">ads managed by <a href="#">@Nexgroww_agency</a></div>
 
 <script>
-// Member Counter Script
+// Member Counter
 let count = 12480;
 setInterval(()=>{
     count += Math.floor(Math.random()*3);
     document.getElementById("memberCount").innerText = count.toLocaleString();
 },3000);
-</script>
 
-<script>
+// Meta Pixel Code
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -289,14 +202,10 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1783748453029637');
 fbq('track', 'PageView');
 
-// TRACKING HELPER: Track click on the wrapper/button
+// TRACKING: This ensures Meta sees the click on the wrapper box
 document.querySelector('.wrapper').addEventListener('click', function() {
-    fbq('track', 'Lead'); // Or 'Contact' / 'Subscribe'
+    fbq('track', 'Lead');
 });
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1783748453029637&ev=PageView&noscript=1"
-/></noscript>
-
 </body>
 </html>
