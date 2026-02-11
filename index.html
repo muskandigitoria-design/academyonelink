@@ -1,151 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>𝗗𝗘𝗘𝗣𝗔𝗞 𝗪𝗔𝗗𝗛𝗪𝗔 (𝗢𝗥𝗜𝗚𝗜𝗡𝗔𝗟)™️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗗𝗘𝗘𝗣𝗔𝗞 𝗪𝗔𝗗𝗛𝗪𝗔 (𝗢𝗥𝗜𝗚𝗜𝗡𝗔𝗟)™️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+        body { background:radial-gradient(circle at top,#111,#000); min-height:100vh; display:flex; justify-content:center; align-items:center; padding:20px; color:#fff; }
+        .container { max-width:420px; width:100%; background:linear-gradient(180deg,#151515,#0a0a0a); border-radius:26px; padding:30px 22px; box-shadow:0 25px 60px rgba(0,0,0,0.9); }
+        
+        /* PROFILE */
+        .profile { text-align:center; }
+        .profile img { width:120px; height:120px; border-radius:50%; padding:4px; background:linear-gradient(135deg,#f5c400,#ffef9f); object-fit:cover; display:block; margin:auto; }
+        .name { margin-top:16px; font-size:27px; font-weight:700; background:linear-gradient(90deg,#f5c400,#fff2b0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        /* FIXED WRAPPER - This helps Meta keep the box steady */
+        .wrapper { 
+            margin: 26px 0; 
+            padding: 3px; 
+            border-radius: 36px; 
+            background: linear-gradient(120deg,#f5c400,#fff1a8,#f5c400); 
+            background-size: 300% 300%; 
+            animation: borderMove 4s linear infinite; 
+            display: block; 
+            position: relative; 
+            z-index: 10;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-body{
-    background:radial-gradient(circle at top,#111,#000);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    color:#fff;
-}
+        @keyframes borderMove { 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
 
-.container{
-    max-width:420px;
-    width:100%;
-    background:linear-gradient(180deg,#151515,#0a0a0a);
-    border-radius:26px;
-    padding:30px 22px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.9);
-}
+        .telegram-btn-link { 
+            width: 100%; 
+            background: linear-gradient(90deg,#007bff,#00c6ff); 
+            padding: 17px; 
+            text-align: center; 
+            border-radius: 33px; 
+            font-size: 18px; 
+            font-weight: 700; 
+            color: #fff; 
+            text-decoration: none; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            transition: transform 0.2s;
+        }
 
-/* PROFILE */
-.profile{ text-align:center; }
-.profile img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    padding:4px;
-    background:linear-gradient(135deg,#f5c400,#ffef9f);
-    object-fit:cover;
-    display:block;
-    margin:auto;
-}
-.name{
-    margin-top:16px;
-    font-size:27px;
-    font-weight:700;
-    background:linear-gradient(90deg,#f5c400,#fff2b0);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
+        /* Subtle hover instead of constant heartbeat helps the Meta Tool lock on */
+        .telegram-btn-link:active { transform: scale(0.98); }
 
-/* --- THE FIX: WRAPPER BOX --- */
-.wrapper {
-    margin: 26px 0;
-    padding: 3px; /* This is your gold border thickness */
-    border-radius: 36px;
-    background: linear-gradient(120deg,#f5c400,#fff1a8,#f5c400);
-    background-size: 300% 300%;
-    animation: borderMove 4s linear infinite;
-    display: flex; /* Ensures the button inside fills the space */
-    position: relative;
-    z-index: 1; /* Keeps it above the background */
-}
+        .plus { position:absolute; right:14px; width:36px; height:36px; border-radius:50%; background:#00c6ff; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 0 15px rgba(0,198,255,0.9); }
 
-@keyframes borderMove{
-    0%{background-position:0% 50%}
-    100%{background-position:100% 50%}
-}
-
-.telegram-btn-link {
-    width: 100%; /* Makes button fill the gold wrapper */
-    background: linear-gradient(90deg,#007bff,#00c6ff);
-    padding: 17px;
-    text-align: center;
-    border-radius: 33px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: heartbeat 2.2s infinite;
-}
-
-@keyframes heartbeat{
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-.plus{
-    position:absolute;
-    right:14px;
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    background:#00c6ff;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 15px rgba(0,198,255,0.9);
-}
-
-/* OTHER ELEMENTS */
-.counter{
-    margin:16px 0;
-    background:rgba(255,255,255,0.06);
-    padding:12px;
-    border-radius:14px;
-    text-align:center;
-}
-.counter b { color: #2ecc71; font-size: 20px; }
-
-.badges{ display:flex; gap:12px; justify-content:center; margin:18px 0; }
-.badge{ background:rgba(255,255,255,0.06); padding:9px 16px; border-radius:14px; font-size:13px; }
-
-.features { margin-top:20px; }
-.feature{
-    background:rgba(255,255,255,0.05);
-    padding:15px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:14px;
-}
-.feature span { color:#2ecc71; }
-
-.footer{
-    text-align:center;
-    margin-top:18px;
-    font-weight:600;
-    background:linear-gradient(90deg,#00f2fe,#4facfe);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.credit{ position:fixed; bottom:10px; width:100%; text-align:center; font-size:13px; color:#ffd88a; }
-.credit a { color:#cfa44a; text-decoration:none; }
-</style>
+        /* OTHER ELEMENTS */
+        .counter { margin:16px 0; background:rgba(255,255,255,0.06); padding:12px; border-radius:14px; text-align:center; }
+        .counter b { color: #2ecc71; font-size: 20px; }
+        .badges { display:flex; gap:12px; justify-content:center; margin:18px 0; }
+        .badge { background:rgba(255,255,255,0.06); padding:9px 16px; border-radius:14px; font-size:13px; }
+        .features { margin-top:20px; }
+        .feature { background:rgba(255,255,255,0.05); padding:15px; border-radius:16px; display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+        .feature span { color:#2ecc71; }
+        .footer { text-align:center; margin-top:18px; font-weight:600; background:linear-gradient(90deg,#00f2fe,#4facfe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .credit { position:fixed; bottom:10px; width:100%; text-align:center; font-size:13px; color:#ffd88a; }
+        .credit a { color:#cfa44a; text-decoration:none; }
+    </style>
 </head>
 <body>
 
@@ -165,7 +82,7 @@ body{
     </div>
 
     <div class="wrapper">
-        <a href="https://t.me/+p8cXYf8rg0U5NjNl" target="_blank" class="telegram-btn-link">
+        <a href="https://t.me/+p8cXYf8rg0U5NjNl" target="_blank" class="telegram-btn-link" id="meta-track-btn">
             🚀 Join on Telegram
             <div class="plus">+</div>
         </a>
@@ -174,7 +91,7 @@ body{
     <div class="features">
         <div class="feature"><span>✔</span> Market Insights & Discussions</div>
         <div class="feature"><span>✔</span> Learn with Experts</div>
-        <div class="feature"><span>✔</span> Practical Strategies</div>
+        <div class="feature)<span>✔</span> Practical Strategies</div>
     </div>
 
     <div class="footer">⚡ Stay Ahead with Smart Learning</div>
@@ -191,21 +108,16 @@ setInterval(()=>{
 },3000);
 
 // Meta Pixel Code
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1783748453029637');
 fbq('track', 'PageView');
 
-// TRACKING: This ensures Meta sees the click on the wrapper box
-document.querySelector('.wrapper').addEventListener('click', function() {
+// TRACKING FIX: Manual trigger in case the visual tool fails
+document.getElementById('meta-track-btn').addEventListener('click', function() {
     fbq('track', 'Lead');
+    console.log('Meta Lead Tracked');
 });
 </script>
+
 </body>
 </html>
