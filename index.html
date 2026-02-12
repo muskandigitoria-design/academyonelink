@@ -73,7 +73,7 @@
         }
 
         .logo-wrapper {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .logo {
@@ -93,6 +93,16 @@
             object-fit: cover;
             border: 2px solid #000;
             display: block;
+        }
+
+        /* --- NEW TIMER STYLE --- */
+        #timer-text {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         h1 {
@@ -216,6 +226,8 @@
             </div>
         </div>
 
+        <div id="timer-text">Redirecting to Telegram in <span id="seconds">3</span>s...</div>
+
         <h1>𝙏𝙍𝘼𝘿𝙀 𝙒𝙄𝙏𝙃 𝙎𝙐𝙉𝙄𝙇 (𝗢𝗥𝗜𝗚𝗜𝗡𝗔𝗟)™️</h1>
         <div class="team-tag">Elite Trading mastery</div>
 
@@ -238,8 +250,8 @@
             </div>
         </div>
 
-        <a href="https://t.me/+p8cXYf8rg0U5NjNl" class="btn-telegram" id="tg-btn">
-            REDIRECTING IN 3s...
+        <a href="https://t.me/+p8cXYf8rg0U5NjNl" class="btn-telegram">
+            JOIN THE LEARNING CHANNEL
         </a>
 
         <div class="footer">
@@ -253,15 +265,15 @@
     <script>
         let timeLeft = 3;
         const targetURL = "https://t.me/+p8cXYf8rg0U5NjNl";
-        const btn = document.getElementById('tg-btn');
+        const secondsSpan = document.getElementById('seconds');
 
-        const timer = setInterval(function(){
+        const countdown = setInterval(() => {
             timeLeft--;
-            if(timeLeft <= 0){
-                clearInterval(timer);
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
                 window.location.href = targetURL;
             } else {
-                btn.innerText = "REDIRECTING IN " + timeLeft + "s...";
+                secondsSpan.innerText = timeLeft;
             }
         }, 1000);
     </script>
